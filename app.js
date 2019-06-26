@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
+var fileUpload = require('express-fileupload');
+
+app.use(fileUpload());
 
 //cargar rutas
 var user_routes = require('./routes/user');
@@ -47,6 +50,12 @@ app.use('/api', invhw_routes);
 app.get('*', function(req, res, next) {
 	res.sendfile(path.resolve('client/index.html'));
 });
+
+var upload = require('./controllers/upload.js');
+app.post('/api/file/uploadcsv', upload.post);
+
+var asaldo = require('./controllers/asaldo.js');
+app.get('/api/getsaldos', asaldo.getAsaldos);
 
 //Exportar modulo
 module.exports = app;
