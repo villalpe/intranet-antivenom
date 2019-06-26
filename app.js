@@ -48,7 +48,7 @@ app.use('/api', fileud_routes);
 app.use('/api', invhw_routes);
 
 app.get('*', function(req, res, next) {
-	res.sendfile(path.resolve('client/index.html'));
+	res.sendFile(path.resolve('client/index.html'));
 });
 
 var upload = require('./controllers/upload.js');
