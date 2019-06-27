@@ -5,9 +5,9 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
-var fileUpload = require('express-fileupload');
+//var fileUpload = require('express-fileupload');
 
-app.use(fileUpload());
+//app.use(fileUpload());
 
 //cargar rutas
 var user_routes = require('./routes/user');
