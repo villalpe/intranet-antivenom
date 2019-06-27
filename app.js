@@ -17,6 +17,7 @@ var poll_routes = require('./routes/poll');
 var uploadfile_routes = require('./routes/uploadfile');
 var fileud_routes = require('./routes/fileud');
 var invhw_routes = require('./routes/invhw');
+var asaldos_routes = require('./routes/asaldo');
 
 //var appRoutes = require('./routes/app');
 //var fileRoutes = require('./routes/file');
@@ -46,6 +47,7 @@ app.use('/api', poll_routes);
 app.use('/api', uploadfile_routes);
 app.use('/api', fileud_routes);
 app.use('/api', invhw_routes);
+app.use('/api', asaldos_routes);
 
 app.get('*', function(req, res, next) {
 	res.sendFile(path.resolve('client/index.html'));
@@ -54,8 +56,8 @@ app.get('*', function(req, res, next) {
 var upload = require('./controllers/upload.js');
 app.post('/api/file/uploadcsv', upload.post);
 
-var asaldo = require('./controllers/asaldo.js');
-app.get('/api/getsaldos', asaldo.getAsaldos);
+//var asaldo = require('./controllers/asaldo.js');
+//app.get('/api/getsaldos', asaldo.getAsaldos);
 
 //Exportar modulo
 module.exports = app;
