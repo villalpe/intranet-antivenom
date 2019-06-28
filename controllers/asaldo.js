@@ -1,5 +1,6 @@
 'use strict'
 //Cargamos Modulos
+var express = require('express');
 var app = express();
 //bcrypt para cifrar contraseñas
 var bcrypt = require('bcrypt-nodejs');
