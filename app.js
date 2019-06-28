@@ -53,8 +53,8 @@ app.get('*', function(req, res, next) {
 	res.sendFile(path.resolve('client/index.html'));
 });
 
-var upload = require('./controllers/upload.js');
-app.post('/api/file/uploadcsv', upload.post);
+//var upload = require('./controllers/upload.js');
+//app.post('/api/file/uploadcsv', upload.post);
 
 //var asaldo = require('./controllers/asaldo.js');
 //app.get('/api/getsaldos', asaldo.getAsaldos);
