@@ -3,6 +3,11 @@
 var express = require('express');
 var asaldoController = require('../controllers/asaldo');
 
+var app = express();
+
+var fileUpload = require('express-fileupload');
+app.use(fileUpload());
+
 //Ahora usamos el router de express
 var api = express.Router();
 //Cargamos el middleware
@@ -16,7 +21,11 @@ var md_upload = mutlipart({ uploadDir: './uploads/users' });
 //A este metodo le paso el middleware con el token
 api.get('/pruebas-csv', md_auth.ensureAuth, asaldoController.pruebas);
 //Para registro de Usuario - guardar - se usa metodo post
-api.post('/uploadcsv', asaldoController.uploadCsv);
+//api.post('/uploadcsv', asaldoController.uploadCsv);
 api.get('/get-asaldos', asaldoController.getAsaldos);
 
+var upload = require('./controllers/upload.js');
+app.post('/uploadcsv', upload.post);
+
 module.exports = api;
+module.exports = app;

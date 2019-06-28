@@ -1,7 +1,7 @@
 'use strict'
 //Cargamos Modulos
-var express = require('express');
-var app = express();
+//var express = require('express');
+//var app = express();
 //bcrypt para cifrar contraseñas
 var bcrypt = require('bcrypt-nodejs');
 //fs para manipular archivos
@@ -14,9 +14,6 @@ var jwt = require('../services/jwt');
 
 var csv = require('fast-csv');
 var mongoose = require('mongoose');
-
-var fileUpload = require('express-fileupload');
-app.use(fileUpload());
 
 var Asaldo = require('../models/asaldo');
 
