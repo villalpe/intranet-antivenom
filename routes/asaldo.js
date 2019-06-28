@@ -3,10 +3,10 @@
 var express = require('express');
 var asaldoController = require('../controllers/asaldo');
 
-var app = express();
+/*var app = express();
 
 var fileUpload = require('express-fileupload');
-app.use(fileUpload());
+app.use(fileUpload());*/
 
 //Ahora usamos el router de express
 var api = express.Router();
@@ -24,8 +24,8 @@ api.get('/pruebas-csv', md_auth.ensureAuth, asaldoController.pruebas);
 //api.post('/uploadcsv', asaldoController.uploadCsv);
 api.get('/get-asaldos', asaldoController.getAsaldos);
 
-var upload = require('../controllers/upload.js');
-app.post('/uploadcsv', upload.post);
+/*var upload = require('../controllers/upload.js');
+app.post('/uploadcsv', upload.post);*/
 
 module.exports = api;
-module.exports = app;
+//module.exports = app;
