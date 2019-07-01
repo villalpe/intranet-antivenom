@@ -18,6 +18,7 @@ var uploadfile_routes = require('./routes/uploadfile');
 var fileud_routes = require('./routes/fileud');
 var invhw_routes = require('./routes/invhw');
 var asaldos_routes = require('./routes/asaldo');
+var usaldo_routes = require('./routes/usaldo');
 
 //var appRoutes = require('./routes/app');
 //var fileRoutes = require('./routes/file');
@@ -48,6 +49,7 @@ app.use('/api', uploadfile_routes);
 app.use('/api', fileud_routes);
 app.use('/api', invhw_routes);
 app.use('/api', asaldos_routes);
+app.use('/api', usaldo_routes);
 
 app.get('*', function(req, res, next) {
 	res.sendFile(path.resolve('client/index.html'));
